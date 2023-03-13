@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins&display=swap');
+
+:root {
+    --primary-color: #e4f1ec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+
+    font-family: 'Poppins', cursive;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.InformationPointsPanel {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
+
+.InformationPointsPanel .label {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 3em;
+    height: 3em;   
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Itim, serif;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 100;
+    font-size: 2em;
+    cursor: zoom-in;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+.InformationPointsPanel .label div{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 30%;
+    bottom: 0;
+    text-align: center;
+  
+}.InformationPointsPanel .label img{
+
+    
+     position: absolute;
+     left:0;
+     width: inherit; 
+     height: inherit; 
+    transform: scale(.75);
+
+ }
+/*background-image: url('textures/T_Star.png')*/
+@keyframes infoPointColorAnim {
+    0%   {background-color:rgba(24, 238, 40, 0.42); } 
+    50%  {background-color: #eed013;  } 
+    100% {background-color:rgba(24, 238, 40, 0.42); }
+}
+
+.Information {
+    width: 15em;
+    color: white;
+    background: rgba(0, 0, 0, 0.32);
+    padding: 1.5em;
+    position: relative;
+    border-radius: 1.2em;
+
+}
+
+.Information.visible {
+
+}
+
+.Information p {
+}
+
+.Information .videoButton {
+    font-size: 1.5em;
+    margin-left: auto;
+    width: 100%;
+    border: 2px solid white;
+    padding: 10px;
+    cursor: pointer;
+    height: 2em;
+    border-radius: 0.5em;
+    background: unset;
+    color: var(--primary-color); 
+    transition-duration: 0.2s;
+}
+.Information .videoButton:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.InformationPanel {
+    position: absolute;
+    right: 15%;
+    top: 5%;
+
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.CloseButton {
+    opacity: 0.1;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 1);
+    font-size: 1em;
+    border-radius: 0;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    border: 1px solid #212121; 
+}
+.CloseButton:hover {
+
+    border: 15px solid #212121;
+    background: rgba(0, 0, 0, 1);
+    opacity: 0.2;
+}
+
+/* Skills Container */ 
+.DropMenuRoot{
+    padding: 10px;
+    position: absolute;
+    background-color: rgba(99, 99, 99, 0.56);
+    display: flex;
+    width: 125px;
+    align-items: center;
+    justify-content: center;
+    left: 10px;
+    top: 1%;
+    border-radius: 10px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+} 
+.DropMenuRoot button
+{
+    opacity: 0.8;
+    position: relative;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.2);
+    width: 125px;
+    height: 25px;
+    
+    /*margin: 0.75em 0.25em 0.5em .25em;*/
+    /*margin: 0.75em 0.25em 0.5em .25em;*/
+    border-radius:  7% / 45%;
+}
+.DropMenuRoot .DropMenuItems{
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+     
+     
+}
+.DropMenuRoot .DropMenuItems.visible{
+    /*max-height: 700px;*/
+    max-height: 125px;
+    transition: max-height 0.25s ease-in;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+
+.DropMenuRoot .DropMenuItems.visible::-webkit-scrollbar {
+    display: none;
+}
+.DropMenuRoot .DropMenuItems li{
+
+    position: relative;
+    height: 26px;
+    opacity: .75;
+    margin-top: 7px;
+    border: 1px solid #c9c9c9;
+    color: white;
+    display: inline-block;
+    width: 125px;
+    border-radius: 5px;
+    text-align: center; 
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.DropMenuRoot .DropMenuItems li p{
+    background: rgba(0,0,0,0.5); 
+    
+} 
+.DropMenuRoot .DropMenuItems li span {
+    z-index: 2;
+    position: inherit;
+}
+.DropMenuRoot .DropMenuItems li .FillBar {
+    position: absolute;
+    top:0;
+    /*--percent : 0;
+    width: calc(var(--percent) * 1%);*/
+    width:0;
+    background: #07737d; 
+    height: 25px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; 
+    border-radius: 5px;
+    /*transform: translateX(0px) translateY(0px);*/  
+}
+ 
+/* Move System */
+.Joystick {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.Joystick .JBack {
+    right: 2em;
+    bottom: 2em;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transition: 0.15s;
+    opacity: 0.5;
+}
+.Joystick .JBack.Move{
+    opacity: .7;
+    border: 5px solid #e2e2e2;
+    width: 125px;
+    height: 125px;
+    transform:translateX(-10px) translateY(-10px);
+}
+.Joystick .JPoint {
+    position: relative;
+    border: 1px solid #c3c3c3;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 25%;
+    transform: translateX(0px) translateY(0px);
+    background: rgba(0, 0, 0, 0.15);
+
+}
+
+.ControlPanel {
+    display: none;
+    position: absolute;
+    padding: 0;
+    right: 2em;
+    bottom: 2em;
+    border: 1px solid #c3c3c3;
+    width: 9em;
+    border-radius: 1.5em;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.ControlPanel .Keyboard {
+    display: grid;
+    grid-template-columns: 4.4em 4.4em;
+}
+
+.MoveButton {
+    background: 0;
+    color: #ffffff;
+    font-size: 1.4em;
+    border-radius: 0.75em;
+    margin: 0.35em auto;
+    width: 2.2em;
+    height: 2.2em;
+    border: 1px solid #c3c3c3;
+    display: block;
+    transition-duration: 0.2s;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MoveButton:hover {
+    background: white;
+    color: black;
+}
+
+.MoveButton:active {
+    background: yellowgreen;
+}
+
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.TryForFree {
+    background: var(--primary-color);
+    text-decoration: none;
+    color: white;
+    padding: .6em 1.3em;
+    font-size: .9em;
+    border-radius: 1.5em;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: black;
+    text-shadow: black;
+
+}
+
+/* Loading Panel*/
+.LoadingPanel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    transition-duration: 1s;
+}
+
+.LoadingPanel h1 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    transition-duration: 3s;
+}
+
+.LoadingPanel.visible h1 {
+
+    background: black;
+}
+
+.LoadingPanel.visible {
+
+    background: black;
+}
+
+.LoadingPanel h1 {
+    font-size: 3em;
+    color: white;
+    text-align: center;
+} 
+
+/* *  Video Panel * */
+
+.VideoPanel{
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(8,17,6,0.57);
+    transform: scale(0);
+    transition-duration: .25s;
+    opacity: 0;
+}
+.VideoPanel.visible{
+    opacity: 1;
+    transform: scale(1);
+}
+.VideoPanel iframe
+{
+    position: relative; 
+    width: 60%;
+    right: 15%;
+    left: 15%;
+    top: 15%;
+    bot:15%;
+    height: 60%;
+    border: 10px solid rgba(255, 255, 255, 0.54);
+    border-radius: 3em;
+    padding: 10px;
+    background: rgba(8,17,6,0.57);
+    
+}
+/*#Skills li{
+    position: relative;
+    height: 26px;
+}*/
+/*
+#Skills li div{
+    position: absolute;
+    top:0;
+   
+}*/
+/*#Skills li span{
+    z-index: 2;
+    position: inherit;
+}*/
