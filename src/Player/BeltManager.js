@@ -14,7 +14,8 @@ export default class BeltManager extends Component
         belt.beltmanager=this;
         this.belts[this.Vec3ToKeyStr(beltKey)]=belt;
         
-        belt.CreatMesh(this.levelmanager.modelDatabase.database.ConveyorForward.scene.clone())
+        //belt.CreatMesh(this.levelmanager.modelDatabase.database.ConveyorForward.scene.clone())
+        belt.CreatMesh(this.levelmanager.modelDatabase.database.testcube.scene.clone())
  
        
         

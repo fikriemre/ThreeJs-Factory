@@ -6,6 +6,10 @@ export default class ModelDatabase {
             path: "Models/Tug.glb"
         } */
         {
+            name: 'testcube',
+            path: "Models/testCube.glb"
+        },
+        {
             name: 'ConveyorForward',
             path: "Models/Conveyor/beltforward.glb"
         }
